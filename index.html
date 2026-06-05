@@ -1,11 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ashly | UX/UI Designer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet">
+
 </head>
 <body>
-    <p>Hello World</p>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar (Mobile) -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-close" onclick="closeSidebar()" aria-label="Close menu">✕</button>
+  <div class="sidebar-logo">Ashly<span style="font-style:italic">.design</span></div>
+  <ul class="sidebar-nav">
+    <li><a href="#about" onclick="closeSidebar()" data-i18n="nav_about">About</a></li>
+    <li><a href="#skills" onclick="closeSidebar()" data-i18n="nav_skills">Skills</a></li>
+    <li><a href="#services" onclick="closeSidebar()" data-i18n="nav_services">Services</a></li>
+    <li><a href="#portfolio" onclick="closeSidebar()" data-i18n="nav_portfolio">Portfolio</a></li>
+    <li><a href="#process" onclick="closeSidebar()" data-i18n="nav_process">Process</a></li>
+    <li><a href="#experience" onclick="closeSidebar()" data-i18n="nav_experience">Experience</a></li>
+    <li><a href="#testimonials" onclick="closeSidebar()" data-i18n="nav_testimonials">Testimonials</a></li>
+    <li><a href="#contact" onclick="closeSidebar()" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="sidebar-lang">
+    <p data-i18n="lang_label">Language</p>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">Ashly<span style="font-style:italic; font-family:'Playfair Display',serif;">.design</span></div>
+    <ul class="desktop-nav">
+      <li><a href="#about" data-i18n="nav_about">About</a></li>
+      <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+      <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="header-actions">
+      <div class="translate-toggle">
+        <button class="tl-btn active" onclick="setLang('en')">EN</button>
+        <button class="tl-btn" onclick="setLang('fr')">FR</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" onclick="openSidebar()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-content fade-up">
+    <div class="hero-eyebrow" data-i18n="hero_badge">UX/UI Designer</div>
+    <h1>
+      <span data-i18n="hero_h1a">Hi, I'm</span> <em>Ashly</em><br>
+      <span class="outline-text" data-i18n="hero_h1b">I Design</span><br>
+      <span data-i18n="hero_h1c">Experiences</span>
+    </h1>
+    <p class="hero-desc" data-i18n="hero_desc">I craft human-centered digital experiences — from deep user research to pixel-perfect, accessible interfaces. Let's build something meaningful and beautiful together.</p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn-primary" data-i18n="hero_cta1">View my work →</a>
+      <a href="#contact" class="btn-outline" data-i18n="hero_cta2">Let's talk</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">1+</div>
+        <div class="stat-label" data-i18n="stat_years">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label" data-i18n="stat_projects">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">22%</div>
+        <div class="stat-label" data-i18n="stat_nps">NPS Increase</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual fade-up">
+    <div class="hero-img-frame">
+      <div class="hero-img-bg"></div>
+      <img src="./assets/img.jpg" alt="Ashly — UX/UI Designer" onerror="this.style.display='none'">
+      <div class="hero-badge-float b1">
+        <span class="badge-dot"></span><span data-i18n="badge_available">Available for work</span>
+      </div>
+      <div class="hero-badge-float b2">✦ <span data-i18n="badge_ux">UX &amp; UI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label" data-i18n="skills_label">Expertise</div>
+  <div class="section-title" data-i18n="skills_title">My Skills</div>
+  <p class="section-sub" data-i18n="skills_sub">A blend of design craft and technical knowledge, honed across years of product work.</p>
+  <div class="skills-layout">
+    <div class="fade-up">
+      <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.8;" data-i18n="skills_text">I believe great design lives at the intersection of empathy, systems thinking, and technical fluency. My toolkit spans the full design spectrum — from early-stage discovery to shipped product.</p>
+      <br>
+      <a href="#portfolio" class="btn-outline" style="display:inline-flex;" data-i18n="skills_cta">See my projects →</a>
+    </div>
+    <div class="skills-cards fade-up">
+      <div class="skill-card">
+        <div class="skill-icon">🧠</div>
+        <h3 data-i18n="sk_ux">UX & Research</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">User Research</span>
+          <span class="skill-tag">Wireframing</span>
+          <span class="skill-tag">Prototyping</span>
+          <span class="skill-tag">Usability Testing</span>
+          <span class="skill-tag">Design Systems</span>
+          <span class="skill-tag">Agile/Scrum</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3 data-i18n="sk_code">Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5 &amp; CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <!-- <span class="skill-tag">React</span> -->
+          <span class="skill-tag">Python</span>
+          <!-- <span class="skill-tag">SwiftUI</span> -->
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3 data-i18n="sk_tools">Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Adobe XD</span>
+          <span class="skill-tag">Notion</span>
+          <span class="skill-tag">Miro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label" data-i18n="srv_label">What I offer</div>
+  <div class="section-title" data-i18n="srv_title">Services</div>
+  <p class="section-sub" data-i18n="srv_sub">From concept to deployment — I offer end-to-end design services tailored to your needs.</p>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-num">01</div>
+      <h3 data-i18n="srv1_title">UX Strategy & Research</h3>
+      <p data-i18n="srv1_desc">In-depth user interviews, competitive analysis, journey mapping and actionable insights that align design with business goals.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">02</div>
+      <h3 data-i18n="srv2_title">UI Design & Prototyping</h3>
+      <p data-i18n="srv2_desc">High-fidelity, interactive prototypes and pixel-perfect visual design — responsive across all devices and screen sizes.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">03</div>
+      <h3 data-i18n="srv3_title">Design Systems</h3>
+      <p data-i18n="srv3_desc">Scalable component libraries and documentation that keep teams aligned and products consistent at any scale.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">04</div>
+      <h3 data-i18n="srv4_title">Usability Testing</h3>
+      <p data-i18n="srv4_desc">Moderated and unmoderated sessions, synthesis of findings, and iteration cycles that continuously improve your product.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">05</div>
+      <h3 data-i18n="srv5_title">Brand Identity</h3>
+      <p data-i18n="srv5_desc">Visual direction, typography, color systems and brand guidelines that create cohesive and memorable identities.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">06</div>
+      <h3 data-i18n="srv6_title">Front-End Development</h3>
+      <p data-i18n="srv6_desc">Turning designs into responsive, accessible HTML/CSS/JS and React code — bridging the gap between design and engineering.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-label" data-i18n="port_label">Selected Work</div>
+  <div class="section-title" data-i18n="port_title">My Portfolio</div>
+  <p class="section-sub" data-i18n="port_sub">A curated selection of projects across product design, brand, and development.</p>
+  <div class="portfolio-filter">
+    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+    <button class="filter-btn" data-filter="ux" data-i18n="filter_ux">UX Design</button>
+    <button class="filter-btn" data-filter="brand" data-i18n="filter_brand">Brand</button>
+    <button class="filter-btn" data-filter="dev" data-i18n="filter_dev">Development</button>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-item fade-up" data-cat="ux">
+      <div class="portfolio-thumb t1">
+        <div class="portfolio-overlay" data-i18n="view_project">View Project ↗</div>
+        📱
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-tag" data-i18n="tag_fintech">Fintech · UX Design</div>
+        <h4>IUT website</h4>
+        <p data-i18n="port1_desc">A platform that shows the different IUTs present in Cameroon.</p>
+      </div>
+    </div>
+    <div class="portfolio-item fade-up" data-cat="ux">
+      <div class="portfolio-thumb t2">
+        <div class="portfolio-overlay" data-i18n="view_project">View Project ↗</div>
+        🖥️
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-tag" data-i18n="tag_edtech">EdTech · UX Design</div>
+        <h4>SkillSpace Learning</h4>
+        <p data-i18n="port2_desc">Responsive online learning platform — accessibility-first, tested with 80+ users.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label" data-i18n="proc_label">How I work</div>
+  <div class="section-title" data-i18n="proc_title">My Process</div>
+  <p class="section-sub" data-i18n="proc_sub">A clear, collaborative design process that keeps stakeholders informed and delivers results.</p>
+  <div class="process-steps">
+    <div class="process-step fade-up">
+      <div class="step-circle">🔍<div class="step-num">1</div></div>
+      <h3 data-i18n="step1_title">Discover</h3>
+      <p data-i18n="step1_desc">User interviews, stakeholder workshops, competitive analysis and defining the problem space.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-circle">💡<div class="step-num">2</div></div>
+      <h3 data-i18n="step2_title">Define</h3>
+      <p data-i18n="step2_desc">Synthesizing research into clear personas, user stories, and a prioritized opportunity roadmap.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-circle">✏️<div class="step-num">3</div></div>
+      <h3 data-i18n="step3_title">Design</h3>
+      <p data-i18n="step3_desc">From sketches to high-fidelity prototypes — iterating rapidly with constant stakeholder feedback.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-circle">🚀<div class="step-num">4</div></div>
+      <h3 data-i18n="step4_title">Deliver</h3>
+      <p data-i18n="step4_desc">Hand-off with detailed specs, design system docs, and ongoing developer support through launch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE & EDUCATION -->
+<!-- <section id="experience">
+  <div class="section-label" data-i18n="exp_label">Background</div>
+  <div class="section-title" data-i18n="exp_title">Experience & Education</div>
+  <p class="section-sub" data-i18n="exp_sub">A track record of impactful work across products, agencies and research labs.</p>
+  <div class="exp-layout">
+    <div>
+      <h3 style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:2rem;" data-i18n="exp_work">Work Experience</h3>
+      <div class="exp-timeline">
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2022 — Present</div>
+            <h3 data-i18n="job1_title">Senior UX/UI Designer</h3>
+            <div class="exp-company">CreativeDot Agency</div>
+            <p data-i18n="job1_desc">Lead end-to-end design for 3 B2B SaaS products, mentored junior designers, increased NPS by 22%.</p>
+          </div>
+        </div>
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2020 — 2022</div>
+            <h3 data-i18n="job2_title">Product Designer</h3>
+            <div class="exp-company">Lumina Labs</div>
+            <p data-i18n="job2_desc">Designed responsive web apps, collaborated with engineers, and established a reusable component library.</p>
+          </div>
+        </div>
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2019 — 2020</div>
+            <h3 data-i18n="job3_title">UX Research Intern</h3>
+            <div class="exp-company">Insight Studio</div>
+            <p data-i18n="job3_desc">Conducted usability tests, synthesized findings, and contributed to the product roadmap.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:2rem;" data-i18n="exp_edu">Education</h3>
+      <div class="exp-timeline">
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2020 — 2022</div>
+            <h3 data-i18n="edu1_title">M.S. Human-Computer Interaction</h3>
+            <div class="exp-company">University of Washington</div>
+            <p data-i18n="edu1_desc">User-centered design, ethics, and advanced prototyping methods.</p>
+          </div>
+        </div>
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2016 — 2020</div>
+            <h3 data-i18n="edu2_title">BFA Interaction Design</h3>
+            <div class="exp-company">California College of the Arts</div>
+            <p data-i18n="edu2_desc">Minor in Psychology — thesis on inclusive design for neurodiverse users.</p>
+          </div>
+        </div>
+        <div class="exp-item fade-up">
+          <div class="exp-line-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-body">
+            <div class="exp-date">2023</div>
+            <h3 data-i18n="edu3_title">UX Certification</h3>
+            <div class="exp-company">Nielsen Norman Group</div>
+            <p data-i18n="edu3_desc">UX management, strategy and research methods mastery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label" data-i18n="testi_label">Kind Words</div>
+  <div class="section-title" data-i18n="testi_title">What Clients Say</div>
+  <p class="section-sub" data-i18n="testi_sub">Feedback from the teams and founders I've had the pleasure of working with.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="stars">★★★★★</div>
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text" data-i18n="t1_text">Ashly completely transformed our onboarding flow. Our activation rate jumped 38% in the first month after the redesign. She's methodical, creative, and an absolute pleasure to work with.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">MK</div>
+        <div>
+          <div class="author-name">Marcus Kim</div>
+          <div class="author-role" data-i18n="t1_role">CEO, EcoPay</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card featured fade-up">
+      <div class="stars">★★★★★</div>
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text" data-i18n="t2_text">Working with Ashly was like hiring a full design team. She brought structure, creative vision, and a deep empathy for users that we'd never experienced before. I'd hire her again immediately.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">SL</div>
+        <div>
+          <div class="author-name" style="color:white;">Sophie Laurent</div>
+          <div class="author-role" data-i18n="t2_role">Product Director, Lumina Labs</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up">
+      <div class="stars">★★★★★</div>
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text" data-i18n="t3_text">Our design system went from a scattered mess to a beautiful, documented library in 6 weeks. Ashly's process is efficient, thorough, and the end result speaks for itself.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">JP</div>
+        <div>
+          <div class="author-name">James Park</div>
+          <div class="author-role" data-i18n="t3_role">CTO, Nexus SaaS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip fade-up">
+  <div>
+    <h2 data-i18n="cta_title">Have a project in<br><em>mind?</em></h2>
+    <p data-i18n="cta_sub">Let's turn your vision into a remarkable product.</p>
+  </div>
+  <div class="cta-strip-actions">
+    <a href="#contact" class="btn-cta-light" data-i18n="cta_btn1">Start a conversation →</a>
+    <a href="mailto:hello@ashly.design?subject=Project%20Enquiry&body=Hi%20Ashly%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project%20with%20you." class="btn-cta-ghost" data-i18n="cta_btn2">📩 Email me directly</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label" data-i18n="cont_label">Get in touch</div>
+  <div class="section-title" data-i18n="cont_title">Let's Work Together</div>
+  <div class="contact-layout">
+    <div class="fade-up">
+      <h3 data-i18n="cont_sub">Ready to start your next project?</h3>
+      <p data-i18n="cont_text">I'm currently available for freelance projects and full-time roles. Whether you have a brief or just an idea — let's talk. I respond within 48 hours.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://wa.me/1234567890?text=Hi%20Ashly!%20I%20found%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20project%20with%20you." target="_blank">
+          <div class="contact-link-icon cl-wa">💬</div>
+          <span data-i18n="cl_wa">WhatsApp me</span>
+        </a>
+        <a class="contact-link" href="mailto:youbiashly@gmail.com?subject=Project%20Enquiry&body=Hi%20Ashly%2C%20I%20found%20your%20portfolio%20and%20I%20would%20love%20to%20discuss%20a%20project%20with%20you.">
+          <div class="contact-link-icon cl-mail">✉️</div>
+          <span data-i18n="cl_mail">youbiashly@gmail.com</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/itzash466" target="_blank">
+          <div class="contact-link-icon cl-ig">📸</div>
+          <span data-i18n="cl_ig">itzash466 on Instagram</span>
+        </a>
+        <a class="contact-link" href="https://facebook.com/Ashly youbi" target="_blank">
+          <div class="contact-link-icon cl-fb">📘</div>
+          <span data-i18n="cl_fb">Facebook page</span>
+        </a>
+        <!-- <a class="contact-link" href="https://linkedin.com/in/ashlydesign" target="_blank">
+          <div class="contact-link-icon cl-li">💼</div>
+          <span data-i18n="cl_li">LinkedIn profile</span>
+        </a> -->
+      </div>
+    </div>
+    <div class="contact-form-wrap fade-up">
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form_name">Your name</label>
+            <input type="text" placeholder="Ashly Johnson" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_email">Email address</label>
+            <input type="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_subject">Subject</label>
+          <select>
+            <option data-i18n="subj1">Project enquiry</option>
+            <option data-i18n="subj2">Full-time opportunity</option>
+            <option data-i18n="subj3">Freelance collaboration</option>
+            <option data-i18n="subj4">Just saying hello 👋</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_msg">Message</label>
+          <textarea placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" data-i18n="form_submit">Send message →</button>
+        <div id="formSuccess" style="display:none;margin-top:1rem;padding:1rem;background:var(--terracotta-xlight);border-radius:12px;text-align:center;font-weight:600;color:var(--terracotta);" data-i18n="form_success">✓ Message sent! I'll be in touch within 48 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo" style="font-family:'Playfair Display',serif;">Ashly<em style="font-style:italic">.design</em></span>
+        <p data-i18n="footer_desc">Crafting human-centered digital experiences from research to pixel-perfect interfaces. Available worldwide for remote projects.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="https://instagram.com/ashly.design" target="_blank" title="Instagram">📸</a>
+          <a class="social-btn" href="https://facebook.com/ashly.design" target="_blank" title="Facebook">📘</a>
+          <!-- <a class="social-btn" href="https://linkedin.com/in/ashlydesign" target="_blank" title="LinkedIn">💼</a> -->
+          <a class="social-btn" href="https://wa.me/1234567890?text=Hi%20Ashly!%20I%20found%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20project%20with%20you." target="_blank" title="WhatsApp">💬</a>
+          <a class="social-btn" href="mailto:hello@ashly.design?subject=Hello%20from%20your%20portfolio&body=Hi%20Ashly%2C%20I%20found%20your%20portfolio%20and%20wanted%20to%20reach%20out." title="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="foot_nav">Navigation</h4>
+        <ul>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="#process" data-i18n="nav_process">Process</a></li>
+          <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="foot_services">Services</h4>
+        <ul>
+          <li><a href="#services" data-i18n="srv1_title">UX Strategy & Research</a></li>
+          <li><a href="#services" data-i18n="srv2_title">UI Design & Prototyping</a></li>
+          <li><a href="#services" data-i18n="srv3_title">Design Systems</a></li>
+          <li><a href="#services" data-i18n="srv4_title">Usability Testing</a></li>
+          <li><a href="#services" data-i18n="srv5_title">Brand Identity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="foot_contact">Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@ashly.design?subject=Project%20Enquiry&body=Hi%20Ashly%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project%20with%20you.">hello@ashly.design</a></li>
+          <li><a href="https://wa.me/1234567890?text=Hi%20Ashly!%20I%20found%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20project%20with%20you." target="_blank" data-i18n="cl_wa">WhatsApp me</a></li>
+          <li><a href="https://linkedin.com/in/ashlydesign" target="_blank">LinkedIn</a></li>
+          <li><a href="https://instagram.com/ashly.design" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/ashly.design" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2025 Ashly — UX/UI Designer. Designed with 🧡 from wireframe to reality.</p>
+      <p><a href="#about" data-i18n="footer_back">Back to top ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Social Buttons -->
+<div class="float-socials">
+  <a class="float-btn wa" href="https://wa.me/1234567890?text=Hi%20Ashly!%20I%20found%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20project%20with%20you." target="_blank" title="WhatsApp">💬</a>
+  <a class="float-btn mail" href="mailto:hello@ashly.design?subject=Project%20Enquiry&body=Hi%20Ashly%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project%20with%20you." title="Email">✉️</a>
+  <a class="float-btn ig" href="https://instagram.com/ashly.design" target="_blank" title="Instagram">📸</a>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
